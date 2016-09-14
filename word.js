@@ -4,8 +4,8 @@
 
 require('./game.js');
 
+WordArray = [];
+WordUArray = [];
 
-PullWord();
-
-
-console.log(word);
+Word = "";
+WordU = "";
