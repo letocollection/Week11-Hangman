@@ -37,10 +37,12 @@ NumInhangmanwords = hangmanWord.length;
 
 PullWord = function() {
 	var word = hangmanWord[Math.floor(Math.random() * NumInhangmanwords)];
-	console.log(word);
 	var currentWord = word;
+	return word;
 
 };
+
+// PullWord();
 
 
 

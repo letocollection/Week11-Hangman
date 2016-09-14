@@ -4,24 +4,43 @@
 
 require('./game.js');
 
+WordArray = [];
+WordUArray = [];
 
-// WordArray = [];
-// WordUArray = [];
+Word = "";
+WordU = "";
 
+// UpdateLetter = function(letter){
+// 	Changes = 0;
+// 	for(i=0; i<Word.length; i++){
+// 		WordArray[i] = Word.charAt(i);
+// 		if(Word.charAt(i) == letter){
+// 			WordUArray [i] = letter;
+// 			Changes += 1;
+// 		}
+// 	}
 
+// 	if(Changes < 1) {
+// 		Lives -=1;
+// 		document.getElementById("lives").innerHTML = Lives;
+// 	}
 
-// PullWord();
+// 	WordU = WordUArray.join("");
+// 	document.getElementById("word").innerHTML = WordU;
+// 	Word1 = WordArray.join("");
+// 	Word2 = WordUArray.join("");
 
-SetUnderline = function() {
-    PullWord();
-    console.log(this.word);
+// 	if (Word1 == Word2) {
+// 		alert("You Win! Next Word");
+// 		window.location.reload();
+// 	}
 
-//     for (i = 0; i < word.length; i++) {
-//         WordArray[i] = word.charAt(i);
-//         WordUArray[i] = "  ___  ";
-   };
-//     WordU = WordUArray.join("");
-//     console.log(word);
+// 	if(Lives < 1) {
+// 		document.getElementById("word").innerHTML == Word1;
+// 		alert("You Have Run Out Of Lives, Please Try Again");
+// 		window.location.reload();
+// 	}
 // }
 
-SetUnderline();
+
+
