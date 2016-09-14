@@ -4,27 +4,24 @@ var letter = require('./letter.js');
 
 var prompt = require('prompt');
 
+var inquirer = require('inquirer');
+
 SetUnderline();
 
 
-var properties = [
+inquirer.prompt([
+
     {
-      name: 'This is Pokemon Hangman', 
-      validator: /^[a-zA-Z\s\-]+$/,
-      warning: 'Please Only Use 1 Letter!'
+        type: "input",
+        name: "letterGuess",
+        message: "This is Pokemon Hangman, Guess a Letter"
     }
-]    
 
-prompt.start();
 
-  prompt.get(properties, function (err, result) {
-    if (err) { return onErr(err); }
-    console.log('Command-line input received:');
-    console.log('  Username: ' + result.username);
-    console.log('  Password: ' + result.password);
-  });
+]).then(function(user) {
 
-  function onErr(err) {
-    console.log(err);
-    return 1;
-  }
+    if(user.letterGuess){
+      UpdateLetter(letterGuess);
+    }
+
+});
