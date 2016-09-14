@@ -5,23 +5,7 @@
 require('./game.js');
 
 
-// WordArray = [];
-// WordUArray = [];
+PullWord();
 
 
-
-// PullWord();
-
-SetUnderline = function() {
-    PullWord();
-    console.log(this.word);
-
-//     for (i = 0; i < word.length; i++) {
-//         WordArray[i] = word.charAt(i);
-//         WordUArray[i] = "  ___  ";
-   };
-//     WordU = WordUArray.join("");
-//     console.log(word);
-// }
-
-SetUnderline();
+console.log(word);
