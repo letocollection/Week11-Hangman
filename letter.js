@@ -4,39 +4,55 @@
 
 var word = require('./word.js');
 
+word = PullWord();
+
 SetUnderline = function() {
-    word = PullWord();
-    // PullWord();
-    // console.log(this.PullWord());
+
+
+
 
     for (i = 0; i < word.length; i++) {
         WordArray[i] = word.charAt(i);
         WordUArray[i] = "  ___  ";
+        console.log(WordUArray[i]);
+        
 
-        console.log(word);
     }
 
     WordU = WordUArray.join("");
-    console.log(WordUArray);
-
 
 
 
 };
 
 UpdateLetter = function(letter) {
+
+    
+
+
+    console.log(word);
+    Lives = 6;
+    
+
+
+
     Changes = 0;
-    for (i = 0; i < Word.length; i++) {
-        WordArray[i] = Word.charAt(i);
-        if (Word.charAt(i) == letter) {
+
+    for (i = 0; i < word.length; i++) {
+        WordArray[i] = word.charAt(i);
+        if (word.charAt(i) == letter) {
             WordUArray[i] = letter;
             Changes += 1;
+            console.log(WordUArray);
+            console.log(WordArray);
+            console.log(word.length);
+
         }
     }
 
     if (Changes < 1) {
         Lives -= 1;
-
+        console.log("You have " + Lives + " Lives Left");
 
     }
 
@@ -44,15 +60,18 @@ UpdateLetter = function(letter) {
     Word1 = WordArray.join("");
     Word2 = WordUArray.join("");
 
-    
     if (Word1 == Word2) {
         console.log("You Win! Next Word");
-        // window.location.reload();
     }
 
     if (Lives < 1) {
-        // document.getElementById("word").innerHTML == Word1;
+
         console.log("You Have Run Out Of Lives, Please Try Again");
-        // window.location.reload();
+
     }
 }
+
+// UpdateLetter("a");
+// UpdateLetter("e");
+// UpdateLetter("o");
+// UpdateLetter("c");
