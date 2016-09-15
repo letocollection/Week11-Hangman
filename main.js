@@ -2,29 +2,37 @@
 
 var letter = require('./letter.js');
 
-var prompt = require('prompt');
+// var prompt = require('prompt');
 
-SetUnderline();
+var inquirer = require('inquirer');
 
 
-var properties = [
-    {
-      name: 'This is Pokemon Hangman', 
-      validator: /^[a-zA-Z\s\-]+$/,
-      warning: 'Please Only Use 1 Letter!'
-    }
-]    
 
-prompt.start();
+var startGame = function() {
+    SetUnderline();
+    inquirer.prompt([{
+        name: "userLetter",
+        type: "input",
+        message: "This is Pokemon Hangman, Please Pick a Letter"
+    }]).then(function(answer) {
+        UpdateLetter(answer.userLetter);
+        if (Lives > 1) {
 
-  prompt.get(properties, function (err, result) {
-    if (err) { return onErr(err); }
-    console.log('Command-line input received:');
-    console.log('  Username: ' + result.username);
-    console.log('  Password: ' + result.password);
-  });
+            inquirer.prompt([{
+                name: "userLetter",
+                type: "input",
+                message: "Pick another Letter"
+            }]).then(function(answer) {
 
-  function onErr(err) {
-    console.log(err);
-    return 1;
-  }
+                UpdateLetter(answer.userLetter);
+
+            })
+
+
+
+
+        }
+    });
+};
+
+startGame();
