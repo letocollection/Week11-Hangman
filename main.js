@@ -25,6 +25,86 @@ var startGame = function() {
             }]).then(function(answer) {
 
                 UpdateLetter(answer.userLetter);
+                if (Lives > 1) {
+
+                    inquirer.prompt([{
+                        name: "userLetter",
+                        type: "input",
+                        message: "Pick another Letter"
+                    }]).then(function(answer) {
+
+                        UpdateLetter(answer.userLetter);
+                        if (Lives > 1) {
+
+                            inquirer.prompt([{
+                                name: "userLetter",
+                                type: "input",
+                                message: "Pick another Letter"
+                            }]).then(function(answer) {
+
+                                UpdateLetter(answer.userLetter);
+                                if (Lives > 1) {
+
+                                    inquirer.prompt([{
+                                        name: "userLetter",
+                                        type: "input",
+                                        message: "Pick another Letter"
+                                    }]).then(function(answer) {
+
+                                        UpdateLetter(answer.userLetter);
+                                        if (Lives > 1) {
+
+                                            inquirer.prompt([{
+                                                name: "userLetter",
+                                                type: "input",
+                                                message: "Pick another Letter"
+                                            }]).then(function(answer) {
+
+                                                UpdateLetter(answer.userLetter);
+                                                if (Lives > 1) {
+
+                                                    inquirer.prompt([{
+                                                        name: "userLetter",
+                                                        type: "input",
+                                                        message: "Pick another Letter"
+                                                    }]).then(function(answer) {
+
+                                                        UpdateLetter(answer.userLetter);
+
+                                                    })
+
+
+
+
+                                                }
+
+                                            })
+
+
+
+
+                                        }
+
+                                    })
+
+
+
+
+                                }
+
+                            })
+
+
+
+
+                        }
+
+                    })
+
+
+
+
+                }
 
             })
 

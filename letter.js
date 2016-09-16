@@ -30,8 +30,8 @@ UpdateLetter = function(letter) {
     
 
 
-    console.log(word);
-    Lives = 6;
+    // console.log(word);
+    
     
 
 
