@@ -70,6 +70,7 @@ var startGame = function() {
                                                     }]).then(function(answer) {
 
                                                         UpdateLetter(answer.userLetter);
+                                                        
 
                                                     })
 

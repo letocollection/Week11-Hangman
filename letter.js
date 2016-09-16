@@ -44,8 +44,8 @@ UpdateLetter = function(letter) {
             WordUArray[i] = letter;
             Changes += 1;
             console.log(WordUArray);
-            console.log(WordArray);
-            console.log(word.length);
+            // console.log(WordArray);
+            // console.log(word.length);
 
         }
     }
