@@ -10,6 +10,7 @@ var inquirer = require('inquirer');
 
 var startGame = function() {
         SetUnderline();
+        Lives = 6;
         inquirer.prompt([{
                 name: "userLetter",
                 type: "input",

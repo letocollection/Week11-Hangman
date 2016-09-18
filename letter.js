@@ -8,16 +8,16 @@ word = PullWord();
 
 var inquirer = require('inquirer');
 
-var nextLetter = function(){ 
+var nextLetter = function() {
     inquirer.prompt([{
-    name: "userLetter",
-    type: "input",
-    message: "Pick another Letter"
-}]).then(function(answer) {
+        name: "userLetter",
+        type: "input",
+        message: "Pick another Letter"
+    }]).then(function(answer) {
 
-    UpdateLetter(answer.userLetter);
+        UpdateLetter(answer.userLetter);
 
-})
+    })
 };
 
 SetUnderline = function() {
@@ -44,7 +44,7 @@ UpdateLetter = function(letter) {
 
 
 
-    console.log(word);
+    // console.log(word);
 
 
 
@@ -96,7 +96,7 @@ UpdateLetter = function(letter) {
             message: "Do you want to play again?"
         }]).then(function(answer) {
 
-            if (answer = "yes") {
+            if (answer = yes) {
                 console.log("OK let's play again!")
 
                 startGame();

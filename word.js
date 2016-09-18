@@ -10,7 +10,7 @@ WordUArray = [];
 Word = "";
 WordU = "";
 
-Lives = 6;
+
 
 
 
