@@ -6,6 +6,20 @@ var word = require('./word.js');
 
 word = PullWord();
 
+var inquirer = require('inquirer');
+
+var nextLetter = function(){ 
+    inquirer.prompt([{
+    name: "userLetter",
+    type: "input",
+    message: "Pick another Letter"
+}]).then(function(answer) {
+
+    UpdateLetter(answer.userLetter);
+
+})
+};
+
 SetUnderline = function() {
 
 
@@ -15,7 +29,7 @@ SetUnderline = function() {
         WordArray[i] = word.charAt(i);
         WordUArray[i] = "  ___  ";
         console.log(WordUArray[i]);
-        
+
 
     }
 
@@ -27,12 +41,12 @@ SetUnderline = function() {
 
 UpdateLetter = function(letter) {
 
-    
 
 
-    // console.log(word);
-    
-    
+
+    console.log(word);
+
+
 
 
 
@@ -44,8 +58,20 @@ UpdateLetter = function(letter) {
             WordUArray[i] = letter;
             Changes += 1;
             console.log(WordUArray);
+
+
+            inquirer.prompt([{
+                name: "userLetter",
+                type: "input",
+                message: "Pick another Letter"
+            }]).then(function(answer) {
+
+                UpdateLetter(answer.userLetter);
+
+            })
+
             // console.log(WordArray);
-            // console.log(word.length);
+
 
         }
     }
@@ -53,6 +79,7 @@ UpdateLetter = function(letter) {
     if (Changes < 1) {
         Lives -= 1;
         console.log("You have " + Lives + " Lives Left");
+        nextLetter();
 
     }
 
@@ -61,18 +88,30 @@ UpdateLetter = function(letter) {
     Word2 = WordUArray.join("");
 
     if (Word1 == Word2) {
-        console.log("You Win! Next Word");
+
+        console.log("You Win!");
+        inquirer.prompt([{
+            name: "restart",
+            type: "confirm",
+            message: "Do you want to play again?"
+        }]).then(function(answer) {
+
+            if (answer = "yes") {
+                console.log("OK let's play again!")
+
+                startGame();
+            } else {
+                process.exit();
+            }
+
+        })
+
     }
 
     if (Lives < 1) {
 
         console.log("You Have Run Out Of Lives, Please Try Again");
+        process.exit();
 
     }
 }
-
-// UpdateLetter("a");
-// UpdateLetter("e");
-// UpdateLetter("o");
-// UpdateLetter("c");
-

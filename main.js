@@ -9,111 +9,16 @@ var inquirer = require('inquirer');
 
 
 var startGame = function() {
-    SetUnderline();
-    inquirer.prompt([{
-        name: "userLetter",
-        type: "input",
-        message: "This is Pokemon Hangman, Please Pick a Letter"
-    }]).then(function(answer) {
-        UpdateLetter(answer.userLetter);
-        if (Lives > 1) {
-
-            inquirer.prompt([{
+        SetUnderline();
+        inquirer.prompt([{
                 name: "userLetter",
                 type: "input",
-                message: "Pick another Letter"
+                message: "This is Pokemon Hangman, Please Pick a Letter"
             }]).then(function(answer) {
-
-                UpdateLetter(answer.userLetter);
-                if (Lives > 1) {
-
-                    inquirer.prompt([{
-                        name: "userLetter",
-                        type: "input",
-                        message: "Pick another Letter"
-                    }]).then(function(answer) {
-
-                        UpdateLetter(answer.userLetter);
-                        if (Lives > 1) {
-
-                            inquirer.prompt([{
-                                name: "userLetter",
-                                type: "input",
-                                message: "Pick another Letter"
-                            }]).then(function(answer) {
-
-                                UpdateLetter(answer.userLetter);
-                                if (Lives > 1) {
-
-                                    inquirer.prompt([{
-                                        name: "userLetter",
-                                        type: "input",
-                                        message: "Pick another Letter"
-                                    }]).then(function(answer) {
-
-                                        UpdateLetter(answer.userLetter);
-                                        if (Lives > 1) {
-
-                                            inquirer.prompt([{
-                                                name: "userLetter",
-                                                type: "input",
-                                                message: "Pick another Letter"
-                                            }]).then(function(answer) {
-
-                                                UpdateLetter(answer.userLetter);
-                                                if (Lives > 1) {
-
-                                                    inquirer.prompt([{
-                                                        name: "userLetter",
-                                                        type: "input",
-                                                        message: "Pick another Letter"
-                                                    }]).then(function(answer) {
-
-                                                        UpdateLetter(answer.userLetter);
-                                                        
-
-                                                    })
-
-
-
-
-                                                }
-
-                                            })
-
-
-
-
-                                        }
-
-                                    })
-
-
-
-
-                                }
-
-                            })
-
-
-
-
-                        }
-
-                    })
-
-
-
-
-                }
-
-            })
-
-
-
-
-        }
-    });
+                    UpdateLetter(answer.userLetter);
+                    
+                })
 };
+
 
 startGame();
