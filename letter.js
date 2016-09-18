@@ -44,7 +44,7 @@ UpdateLetter = function(letter) {
 
 
 
-    // console.log(word);
+    console.log(word);
 
 
 
@@ -60,15 +60,7 @@ UpdateLetter = function(letter) {
             console.log(WordUArray);
 
 
-            inquirer.prompt([{
-                name: "userLetter",
-                type: "input",
-                message: "Pick another Letter"
-            }]).then(function(answer) {
-
-                UpdateLetter(answer.userLetter);
-
-            })
+            nextLetter();
 
             // console.log(WordArray);
 
@@ -96,7 +88,7 @@ UpdateLetter = function(letter) {
             message: "Do you want to play again?"
         }]).then(function(answer) {
 
-            if (answer = yes) {
+            if (restart = yes) {
                 console.log("OK let's play again!")
 
                 startGame();
